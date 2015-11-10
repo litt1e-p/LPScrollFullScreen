@@ -1,6 +1,13 @@
 # LPScrollFullScreen
 Scroll to hide navigationBar and toolBar or tabBar for making full screen effect like Facebook app
 which is base on [NJKScrollFullScreen](https://github.com/ninjinkun/NJKScrollFullScreen).
+
+## Include
+- use cocapods
+> pod 'LPScrollFullScreen', '~> 1.0.0'
+- manual include
+> drag LPScrollFullScreen floder into you project
+
 ## Usage
 >need 2 lines code only
 >for example, in UITableViewController:
