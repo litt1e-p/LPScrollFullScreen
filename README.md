@@ -2,6 +2,10 @@
 Scroll to hide navigationBar and toolBar or tabBar for making full screen effect like Facebook app
 which is base on [NJKScrollFullScreen](https://github.com/ninjinkun/NJKScrollFullScreen).
 
+##Screenshot
+
+<img src="Screenshots/screencast.gif" width=320>
+
 ## Include
 - use cocapods
 > pod 'LPScrollFullScreen', '~> 1.0.0'
