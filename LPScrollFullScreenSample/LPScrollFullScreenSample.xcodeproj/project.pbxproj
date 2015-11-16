@@ -13,12 +13,13 @@
 		3CFE0F421BECA3DA00039DF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CFE0F401BECA3DA00039DF2 /* Main.storyboard */; };
 		3CFE0F441BECA3DA00039DF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CFE0F431BECA3DA00039DF2 /* Assets.xcassets */; };
 		3CFE0F471BECA3DA00039DF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CFE0F451BECA3DA00039DF2 /* LaunchScreen.storyboard */; };
-		3CFE0F511BECA43700039DF2 /* LPScrollFullScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE0F501BECA43700039DF2 /* LPScrollFullScreen.m */; settings = {ASSET_TAGS = (); }; };
-		3CFE0F541BECA48D00039DF2 /* UIViewController+LPScrollFullScreenExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE0F531BECA48D00039DF2 /* UIViewController+LPScrollFullScreenExtension.m */; settings = {ASSET_TAGS = (); }; };
-		3CFE0F571BECA8B400039DF2 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE0F561BECA8B400039DF2 /* TableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3CFE0F511BECA43700039DF2 /* LPScrollFullScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE0F501BECA43700039DF2 /* LPScrollFullScreen.m */; };
+		3CFE0F541BECA48D00039DF2 /* UIViewController+LPScrollFullScreenExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE0F531BECA48D00039DF2 /* UIViewController+LPScrollFullScreenExtension.m */; };
+		3CFE0F571BECA8B400039DF2 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CFE0F561BECA8B400039DF2 /* TableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C57E2251BF961E90024AC3F /* define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = define.h; sourceTree = "<group>"; };
 		3CFE0F341BECA3DA00039DF2 /* LPScrollFullScreenSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPScrollFullScreenSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CFE0F381BECA3DA00039DF2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3CFE0F3A1BECA3DA00039DF2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -35,7 +36,6 @@
 		3CFE0F531BECA48D00039DF2 /* UIViewController+LPScrollFullScreenExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LPScrollFullScreenExtension.m"; sourceTree = "<group>"; };
 		3CFE0F551BECA8B400039DF2 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		3CFE0F561BECA8B400039DF2 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
-		3CFE0F581BECAB3C00039DF2 /* define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = define.h; path = LPScrollFullScreen/define.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				3CFE0F4E1BECA41100039DF2 /* LPScrollFullScreen */,
-				3CFE0F581BECAB3C00039DF2 /* define.h */,
+				3C57E2251BF961E90024AC3F /* define.h */,
 				3CFE0F3A1BECA3DA00039DF2 /* AppDelegate.h */,
 				3CFE0F3B1BECA3DA00039DF2 /* AppDelegate.m */,
 				3CFE0F3D1BECA3DA00039DF2 /* ViewController.h */,
@@ -329,6 +329,7 @@
 				3CFE0F4D1BECA3DA00039DF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

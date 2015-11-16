@@ -39,7 +39,7 @@
 - (void)setupData
 {
     NSMutableArray *data = [@[] mutableCopy];
-    for (NSUInteger i = 0; i < 100; i++) {
+    for (NSUInteger i = 0; i < 6; i++) {
         [data addObject:@(i)];
     }
     _data = [data copy];

@@ -27,6 +27,7 @@ LPScrollDirection detectScrollDirection(currentOffsetY, previousOffsetY)
 @property (nonatomic) CGFloat previousOffsetY;
 @property (nonatomic) CGFloat accumulatedY;
 @property (nonatomic, weak) id<UIScrollViewDelegate> forwardTarget;
+@property (nonatomic, assign) CGFloat navigationBarOriginBottom;
 
 @end
 
@@ -40,6 +41,8 @@ LPScrollDirection detectScrollDirection(currentOffsetY, previousOffsetY)
         _downThresholdY = 200.0;
         _upThresholdY = 0.0;
         _forwardTarget = forwardTarget;
+        UIViewController *forwardTargetVc = (UIViewController *)forwardTarget;
+        _navigationBarOriginBottom = CGRectGetMaxY(forwardTargetVc.navigationController.navigationBar.frame);
     }
     return self;
 }
@@ -83,7 +86,6 @@ LPScrollDirection detectScrollDirection(currentOffsetY, previousOffsetY)
                 if ([_delegate respondsToSelector:@selector(scrollFullScreen:scrollViewDidScrollUp:)]) {
                     [_delegate scrollFullScreen:self scrollViewDidScrollUp:deltaY];
                 } else {
-//#warning add auto execution
                     UIViewController *forwardTargetVc = (UIViewController *)_forwardTarget;
                     [forwardTargetVc moveNavigationBar:deltaY animated:YES];
                     [forwardTargetVc moveTabBar:-deltaY animated:YES];
@@ -100,7 +102,6 @@ LPScrollDirection detectScrollDirection(currentOffsetY, previousOffsetY)
                 if ([_delegate respondsToSelector:@selector(scrollFullScreen:scrollViewDidScrollDown:)]) {
                     [_delegate scrollFullScreen:self scrollViewDidScrollDown:deltaY];
                 } else {
-//#warning add auto execution
                     UIViewController *forwardTargetVc = (UIViewController *)_forwardTarget;
                     [forwardTargetVc moveNavigationBar:deltaY animated:YES];
                     [forwardTargetVc moveTabBar:-deltaY animated:YES];
@@ -143,7 +144,6 @@ LPScrollDirection detectScrollDirection(currentOffsetY, previousOffsetY)
                 if ([_delegate respondsToSelector:@selector(scrollFullScreenScrollViewDidEndDraggingScrollUp:)]) {
                     [_delegate scrollFullScreenScrollViewDidEndDraggingScrollUp:self];
                 } else {
-//#warning add auto execution
                     UIViewController *forwardTargetVc = (UIViewController *)_forwardTarget;
                     [forwardTargetVc hideNavigationBar:YES];
                     [forwardTargetVc hideTabBar:YES];
@@ -161,7 +161,6 @@ LPScrollDirection detectScrollDirection(currentOffsetY, previousOffsetY)
                 if ([_delegate respondsToSelector:@selector(scrollFullScreenScrollViewDidEndDraggingScrollDown:)]) {
                     [_delegate scrollFullScreenScrollViewDidEndDraggingScrollDown:self];
                 } else {
-//#warning add auto execution
                     UIViewController *forwardTargetVc = (UIViewController *)_forwardTarget;
                     [forwardTargetVc showNavigationBar:YES];
                     [forwardTargetVc showTabBar:YES];
@@ -175,6 +174,18 @@ LPScrollDirection detectScrollDirection(currentOffsetY, previousOffsetY)
     }
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.y == -_navigationBarOriginBottom) {
+        UIViewController *forwardTargetVc = (UIViewController *)_forwardTarget;
+        [UIView animateWithDuration:0.1f animations:^{
+            [forwardTargetVc showNavigationBar:YES];
+            [forwardTargetVc showTabBar:YES];
+            [forwardTargetVc showToolbar:YES];
+        }];
+    }
+}
+
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
 {
     BOOL ret = YES;
@@ -184,7 +195,6 @@ LPScrollDirection detectScrollDirection(currentOffsetY, previousOffsetY)
     if ([_delegate respondsToSelector:@selector(scrollFullScreenScrollViewDidEndDraggingScrollDown:)]) {
         [_delegate scrollFullScreenScrollViewDidEndDraggingScrollDown:self];
     } else {
-//#warning add auto execution
         UIViewController *forwardTargetVc = (UIViewController *)_forwardTarget;
         [forwardTargetVc showNavigationBar:YES];
         [forwardTargetVc showTabBar:YES];
