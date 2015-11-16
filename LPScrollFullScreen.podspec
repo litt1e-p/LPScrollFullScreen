@@ -7,9 +7,9 @@ Pod::Spec.new do |s|
                        DESC
   s.homepage         = "https://github.com/litt1e-p/LPScrollFullScreen"
   # s.screenshots      = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
-  s.license          = 'MIT'
+  s.license          = { :type => 'MIT' }
   s.author           = { "litt1e-p" => "litt1e.p4ul@gmail.com" }
-  s.source           = { :git => "https://github.com/litt1e-p/LPScrollFullScreen.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/litt1e-p/LPScrollFullScreen.git", :tag => 'v1.0.1' }
   # s.social_media_url = 'https://twitter.com/NAME'
 
   s.platform     = :ios, '6.0'
