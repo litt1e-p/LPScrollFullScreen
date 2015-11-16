@@ -27,7 +27,7 @@ LPScrollDirection detectScrollDirection(currentOffsetY, previousOffsetY)
 @property (nonatomic) CGFloat previousOffsetY;
 @property (nonatomic) CGFloat accumulatedY;
 @property (nonatomic, weak) id<UIScrollViewDelegate> forwardTarget;
-@property (nonatomic, assign) CGFloat navigationBarOriginBottom;
+@property (nonatomic, assign) CGFloat navigationBarOriginalBottom;
 
 @end
 
@@ -42,7 +42,7 @@ LPScrollDirection detectScrollDirection(currentOffsetY, previousOffsetY)
         _upThresholdY = 0.0;
         _forwardTarget = forwardTarget;
         UIViewController *forwardTargetVc = (UIViewController *)forwardTarget;
-        _navigationBarOriginBottom = CGRectGetMaxY(forwardTargetVc.navigationController.navigationBar.frame);
+        _navigationBarOriginalBottom = CGRectGetMaxY(forwardTargetVc.navigationController.navigationBar.frame);
     }
     return self;
 }
@@ -176,7 +176,7 @@ LPScrollDirection detectScrollDirection(currentOffsetY, previousOffsetY)
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    if (scrollView.contentOffset.y == -_navigationBarOriginBottom) {
+    if (scrollView.contentOffset.y == -_navigationBarOriginalBottom) {
         UIViewController *forwardTargetVc = (UIViewController *)_forwardTarget;
         [UIView animateWithDuration:0.1f animations:^{
             [forwardTargetVc showNavigationBar:YES];
