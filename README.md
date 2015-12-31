@@ -15,12 +15,13 @@ which is base on [NJKScrollFullScreen](https://github.com/ninjinkun/NJKScrollFul
 ## Usage
 >need 2 lines code only
 >for example, in UITableViewController:
-- //@property (nonatomic, strong) LPScrollFullScreen *scrollProxy;
-- //self.edgesForExtendedLayout = UIRectEdgeAll;
-- //self.extendedLayoutIncludesOpaqueBars = YES;
-- _scrollProxy = [[LPScrollFullScreen alloc] initWithForwardTarget:self];
-- self.tableView.delegate = (id)_scrollProxy;
-
+```python
+ //@property (nonatomic, strong) LPScrollFullScreen *scrollProxy;
+ //self.edgesForExtendedLayout = UIRectEdgeAll;
+ //self.extendedLayoutIncludesOpaqueBars = YES;
+ _scrollProxy = [[LPScrollFullScreen alloc] initWithForwardTarget:self];
+ self.tableView.delegate = (id)_scrollProxy;
+```
 ##Update
 1. v1.0.2
 
