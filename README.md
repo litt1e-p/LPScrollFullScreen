@@ -3,6 +3,10 @@
 Scroll to hide navigationBar and toolBar or tabBar for making full screen effect like Facebook app
 which is base on [NJKScrollFullScreen](https://github.com/ninjinkun/NJKScrollFullScreen).
 
+# Additional
+
+swift version is [here](https://github.com/litt1e-p/LPScrollFullScreen-swift)
+
 ##Screenshot
 
 <img src="Screenshots/screencast.gif" width=320>
