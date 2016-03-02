@@ -14,9 +14,13 @@ swift version is [here](https://github.com/litt1e-p/LPScrollFullScreen-swift)
 ## Include
 
 - use cocapods
-> pod 'LPScrollFullScreen', '~> 1.0.2'
+```swift
+pod 'LPScrollFullScreen', '~> 1.0.2'
+```
 - manual include
-> drag LPScrollFullScreen folder into you project
+```swift
+drag LPScrollFullScreen folder into you project
+```
 
 ## Usage
 
