@@ -26,12 +26,15 @@ drag LPScrollFullScreen folder into you project
 
 >need 2 lines code only
 >for example, in UITableViewController:
-```python
- //@property (nonatomic, strong) LPScrollFullScreen *scrollProxy;
- //self.edgesForExtendedLayout = UIRectEdgeAll;
- //self.extendedLayoutIncludesOpaqueBars = YES;
+```swift
+ //1.set LPScrollFullScreen scrollProxy for your scrollView/UITableView/UIWebView/UICollectionView
  _scrollProxy = [[LPScrollFullScreen alloc] initWithForwardTarget:self];
+ //2.set it as delegate for your scrollView
  self.tableView.delegate = (id)_scrollProxy;
+ //or
+ self.collectionView.delegate = (id)_scrollProxy;
+ //or
+ self.webView.delegate = (id)_scrollProxy;
 ```
 
 ##Update
