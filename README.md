@@ -37,7 +37,7 @@ drag LPScrollFullScreen folder into you project
  self.webView.delegate = (id)_scrollProxy;
 ```
 
-##Update
+## Release Notes
 
 - v1.0.2
 
